@@ -1,21 +1,24 @@
+import json
 import os
+
+from lecture_searching.generators import unordered_sequence
 
 # get current working directory path
 cwd_path = os.getcwd()
 
 
-def read_data(file_name, field):
-    """
-    Reads json file and returns sequential data.
-    :param file_name: (str), name of json file
-    :param field: (str), field of a dict to return
-    :return: (list, string),
-    """
-    file_path = os.path.join(cwd_path, file_name)
+def read_data(file_name,klic):
+    with open(file_name,"r") as soubor:
+        data=json.load(soubor)
+        s=data[klic]
+        return s
+
+
 
 
 def main():
-    pass
+    seqential=read_data("sequential.json","unordered_numbers")
+    print(seqential)
 
 
 if __name__ == '__main__':
