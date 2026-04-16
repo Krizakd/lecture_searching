@@ -13,12 +13,26 @@ def read_data(file_name,klic):
         s=data[klic]
         return s
 
-
+def linear_search(sekvence, cislo):
+    count = 0
+    seznam = []
+    for poradi, i in enumerate(sekvence):
+        if i == cislo:
+            count += 1
+            seznam.append(poradi)
+    return count, seznam
 
 
 def main():
     seqential=read_data("sequential.json","unordered_numbers")
-    print(seqential)
+    pocet, poradi=linear_search(seqential, 0)
+    print(pocet)
+    print(poradi)
+
+
+
+
+
 
 
 if __name__ == '__main__':
