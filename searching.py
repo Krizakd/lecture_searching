@@ -1,5 +1,8 @@
 import json
 import os
+import time
+
+from generators import ordered_sequence, unordered_sequence
 
 # from lecture_searching.generators import unordered_sequence
 
@@ -44,10 +47,20 @@ def binary_search(sekvence, cislo):
 
 def main():
     # seqential=read_data("sequential.json","unordered_numbers")
-    seqential = read_data("sequential.json", "ordered_numbers")
 
-    s=binary_search(seqential, 2)
-    print(s)
+    seq_200 = unordered_sequence(2000)
+    star = time.perf_counter()
+    linear_search(seq_200, 10)
+    end = time.perf_counter()
+    duration = end - star
+    print(f"cas je  {duration:.8f} s")
+
+    seqor_200 = ordered_sequence(2000)
+    start = time.perf_counter()
+    binary_search(seq_200, 10)
+    end = time.perf_counter()
+    s = end - start
+    print(f"cas je  {s:.8f} s")
 
 
 
