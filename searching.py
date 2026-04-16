@@ -1,7 +1,7 @@
 import json
 import os
 
-from lecture_searching.generators import unordered_sequence
+# from lecture_searching.generators import unordered_sequence
 
 # get current working directory path
 cwd_path = os.getcwd()
